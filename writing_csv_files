@@ -1,0 +1,18 @@
+# from csv import writer
+# with open('1.1 fighters.csv.csv', 'w', newline='') as file:  # Open in write mode
+#     csv_writer = writer(file)
+#     csv_writer.writerow(["Name", "Age", "address"])
+#     csv_writer.writerow(["Blue", 5, 0000])
+#     csv_writer.writerow(["Kitty", 8, 34576])
+
+from csv import reader, writer
+with open("fighters.csv.csv") as file: 
+    # opens a new file named "scream_fighter.csv" in write mode ('w').
+    csv_reader = reader(file)
+    fighter = [[s.upper() for s in row ] for row in csv_reader]
+    # for row in fighter:
+    #     print(row)
+with open('stream_fighter.csv', 'w', newline='') as file: # 
+        csv_writer= writer(file)
+        for fighter in fighter:
+              csv_writer.writerow(fighter)
